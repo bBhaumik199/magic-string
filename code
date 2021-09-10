@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<windows.h>
+void main(){
+	char name[200]="This string changes its letters to capital one by one",i,cap,j,cp[200];
+int c=0;
+	strcpy(cp,name);
+	for(i=0;i<strlen(name);i++){
+		//i=0 toupper(name[i])
+		if(name[i]==' '){
+			continue;
+		}
+		c++;
+		strcpy(name,cp);
+		cap=toupper(name[i]);
+		for(j=0;j<(sizeof(name)/sizeof(name[0]));j++){
+			if(i==j){
+				name[i]=cap;
+			}
+		}
+		system("cls");
+		printf("%s\n",name);
+		Sleep(500);
+	}
+}
